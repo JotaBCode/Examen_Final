@@ -1,0 +1,9 @@
+# Dependencias instaladas con npm
+backend/node_modules/
+
+# Archivos de log
+*.log
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db

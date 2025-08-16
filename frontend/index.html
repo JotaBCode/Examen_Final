@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Optimizador de Portafolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- Chart.js opcional para sumar el punto de visualización -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Optimizador de Portafolio (Examen Final)</h1>
+
+    <section class="card">
+      <h2>Entrada</h2>
+      <div class="form-row">
+        <label for="capacidad">Capacidad (presupuesto):</label>
+        <input type="number" id="capacidad" placeholder="Ej: 10000" min="0" />
+      </div>
+
+      <div class="projects">
+        <div class="projects-header">
+          <span>Proyecto (ID)</span><span>Costo</span><span>Ganancia</span><span></span>
+        </div>
+        <div id="projects-list"></div>
+        <button id="add-project" class="btn secondary">+ Agregar proyecto</button>
+      </div>
+
+      <div class="actions">
+        <button id="btn-calcular" class="btn primary">Calcular</button>
+        <button id="btn-limpiar" class="btn">Limpiar</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Resultados</h2>
+      <div id="result-card" class="result"></div>
+      <div class="tables">
+        <div>
+          <h3>Tabla de resultados</h3>
+          <table id="tabla-resultados">
+            <thead>
+              <tr><th>Seleccionados</th><th>Ganancia total</th><th>Peso total</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div>
+          <h3>Comparativa (opcional)</h3>
+          <canvas id="chart" width="400" height="260"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ejemplo de datos</h2>
+      <button id="btn-ejemplo" class="btn secondary">Cargar ejemplo A-B-C-D (cap=10000)</button>
+      <button id="btn-caso1" class="btn secondary">Cargar Caso de Éxito 1</button>
+      <button id="btn-caso2" class="btn secondary">Caso de Éxito 2</button>
+      <button id="btn-caso3" class="btn secondary">Caso de Éxito 3</button>
+    </section>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

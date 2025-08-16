@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: Microservicio de Optimización de Portafolio
+  version: "1.0.0"
+servers:
+  - url: http://localhost:3000
+paths:
+  /optimizar:
+    post:
+      summary: Optimiza selección de proyectos dado un presupuesto (0/1 knapsack)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [capacidad, objetos]
+              properties:
+                capacidad:
+                  type: integer
+                  example: 10000
+                objetos:
+                  type: array
+                  items:
+                    type: object
+                    required: [nombre, peso, ganancia]
+                    properties:
+                      nombre: { type: string, example: "A" }
+                      peso:   { type: integer, example: 2000 }
+                      ganancia: { type: integer, example: 1500 }
+      responses:
+        "200":
+          description: Resultado óptimo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  seleccionados:
+                    type: array
+                    items: { type: string }
+                  ganancia_total:
+                    type: integer
+                  peso_total:
+                    type: integer
+              examples:
+                exito:
+                  value:
+                    seleccionados: ["B", "C"]
+                    ganancia_total: 7500
+                    peso_total: 9000
+        "400":
+          description: Error de validación
+        "500":
+          description: Error interno
