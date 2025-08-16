@@ -5,6 +5,12 @@ const { optimize } = require('./lib/knapsack');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const path = require('path');
+
+const swaggerDocument = YAML.load(path.join(__dirname, 'openapi.yaml'));
+
 //CORS
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -84,6 +90,8 @@ app.post('/optimizar', (req, res) => {
     return res.status(500).json({ error: 'Error interno del servidor.' });
   }
 });
+
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(PORT, () => {
   console.log(`Backend escuchando en http://localhost:${PORT}`);

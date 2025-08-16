@@ -20,7 +20,7 @@ Cumple con los entregables del examen:
 - Algoritmo óptimo con **programación dinámica (DP)**.  
 - Frontend con formulario dinámico para ingresar proyectos.  
 - Visualización de resultados en **tarjeta, tabla y gráfico (Chart.js)**.  
-- Documentación **OpenAPI**.  
+- Documentación **OpenAPI** con acceso vía **Swagger UI**.  
 - Soporte de **Docker** y **docker-compose** para despliegue.  
 
 ---
@@ -121,8 +121,10 @@ docker compose up --build
 ---
 
 ## 📑 Documentación API
-Archivo: `backend/openapi.yaml`  
-Importable en **Swagger UI**, **Postman** o **Insomnia**.
+- Archivo: `backend/openapi.yaml`  
+- Importable en **Swagger UI**, **Postman** o **Insomnia**.  
+- También accesible desde el backend en:  
+  👉 **http://localhost:3000/docs**  
 
 ---
 
@@ -150,4 +152,5 @@ Importable en **Swagger UI**, **Postman** o **Insomnia**.
 ## ✨ Conclusiones
 - El microservicio cumple con los requisitos de **validación, eficiencia y modularidad**.  
 - El frontend permite una interacción amigable con **tabla, resumen y gráfico**.  
-- El proyecto es fácilmente **portable y desplegable** gracias a Docker. 
+- El proyecto es fácilmente **portable y desplegable** gracias a Docker.  
+- La documentación está disponible tanto en **formato OpenAPI** como en **Swagger UI** para consulta rápida.  
